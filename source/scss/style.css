@@ -267,8 +267,7 @@ html {
   padding: 10rem 2.5% 0 2.5%;
   color: white;
 }
-
-.container-main__text {
+.container-main .container-main__title {
   margin-top: 3.2rem;
   font-family: GT Eesti Pro Text;
   font-weight: 375;
@@ -276,4 +275,51 @@ html {
   font-size: 3.75rem;
   line-height: 94%;
   letter-spacing: -5%;
+}
+.container-main .container-main__text {
+  color: white;
+  margin-top: 1.5rem;
+  font-family: KyivType Sans;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 1.15rem;
+  line-height: 140%;
+  letter-spacing: -1%;
+}
+.container-main .container-main__btn {
+  margin-top: 2rem;
+  width: 16.5rem;
+  height: 3.5rem;
+  border-radius: 20rem;
+  border: 1px solid #a87c25;
+  background: linear-gradient(180deg, #d4b26f -66.86%, #a87c25 180.08%);
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.container-main .container-main__btn .container-main__btn-text {
+  font-family: KyivType Sans;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 14px;
+  line-height: 124%;
+  letter-spacing: -1%;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+.container-main .container-main__btn .container-main__btn-arrow {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: white;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.container-main .container-main__btn .container-main__btn-arrow .arrow {
+  width: 0.55rem;
+  height: 0.55rem;
+  margin: auto;
 }/*# sourceMappingURL=style.css.map */
