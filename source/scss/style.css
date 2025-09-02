@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *::after,
 *::before {
@@ -17,6 +18,33 @@ html {
   height: auto;
   min-height: 100vh;
   overflow: hidden;
+}
+
+.container-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  height: 10rem;
+}
+
+.container-header__blur {
+  position: fixed;
+  z-index: inherit;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 10rem;
+  /* Маска применяется только к псевдоэлементу */
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 75%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 75%, rgba(0, 0, 0, 0) 100%);
+  background: inherit;
+  pointer-events: none;
+  z-index: -1;
 }
 
 .video-wrapper {
@@ -42,16 +70,7 @@ html {
 }
 
 .container-header__header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
   height: 7rem;
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
-  background: rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   padding: 1rem 2.4rem;
   align-items: center;
@@ -180,7 +199,7 @@ html {
   letter-spacing: -1%;
 }
 .right-content .right-content__btn {
-  width: 12rem;
+  width: 11.5rem;
   height: 2.4rem;
   border-radius: 2rem;
   border: 1px solid white;
@@ -188,6 +207,7 @@ html {
   padding: 0.5rem 0.5rem 0.5rem 0.75rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 0.5rem;
 }
 .right-content .right-content__btn .right-content__btn-text {
@@ -214,4 +234,46 @@ html {
   width: 0.55rem;
   height: 0.55rem;
   margin: auto;
+}
+
+.nav {
+  height: 3rem;
+  width: 95%;
+  margin: auto;
+  background: rgba(255, 255, 255, 0);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.nav .nav-item {
+  color: white;
+  font-family: KyivType Sans;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 0.8rem;
+  line-height: 124%;
+  letter-spacing: 6%;
+  text-transform: uppercase;
+}
+.nav .nav-item:first-child {
+  display: flex;
+  gap: 1rem;
+}
+
+.container-main {
+  padding: 10rem 2.5% 0 2.5%;
+  color: white;
+}
+
+.container-main__text {
+  margin-top: 3.2rem;
+  font-family: GT Eesti Pro Text;
+  font-weight: 375;
+  font-style: Book;
+  font-size: 3.75rem;
+  line-height: 94%;
+  letter-spacing: -4%;
 }/*# sourceMappingURL=style.css.map */
