@@ -6,6 +6,7 @@
   margin: 0;
   border: none;
   box-sizing: border-box;
+  scrollbar-width: none;
 }
 
 :root {
@@ -17,7 +18,13 @@ html {
   width: 100%;
   height: auto;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 90rem;
+  height: 51.25rem;
+  overflow-x: hidden;
 }
 
 .container-header {
@@ -322,4 +329,115 @@ html {
   width: 0.55rem;
   height: 0.55rem;
   margin: auto;
+}
+
+.container-main__slider-wrapper {
+  width: 100vw;
+  margin-left: -2.5rem;
+}
+
+.container-main__slider {
+  margin: 5.8rem auto 0 auto;
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: nowrap;
+  width: 62.625rem;
+  height: 8.625rem;
+}
+.container-main__slider .slider-item {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0.25rem;
+  border-radius: 1.25rem;
+}
+.container-main__slider .slider-item__text {
+  width: 7.75rem;
+  height: 8.125rem;
+}
+.container-main__slider .slider-item__text .number {
+  margin: 0.75rem;
+  width: 2rem;
+  height: 2rem;
+  background-color: inherit;
+  color: inherit;
+  font-family: Golos Text;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 0.95rem;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container-main__slider .slider-item__text .text {
+  margin: 0.75rem;
+  font-family: KyivType Sans;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 0.85rem;
+  line-height: 124%;
+  letter-spacing: -1%;
+}
+.container-main__slider .active {
+  width: 16.25rem;
+  height: 8.625rem;
+  background-color: #fff;
+  color: black;
+}
+.container-main__slider .active .img {
+  width: 7.75rem;
+  height: 8.125rem;
+  border-radius: 1rem;
+}
+.container-main__slider .active > .slider-item__text > .number {
+  border: 1px solid rgba(213, 175, 98, 0.6);
+}
+.container-main__slider .inactive {
+  width: 9rem;
+  height: 8.625rem;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  -webkit-backdrop-filter: blur(16px);
+          backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+.container-main__slider .inactive .img {
+  display: none;
+}
+.container-main__slider .inactive > .slider-item__text > .number {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.container-main__slider .active::after {
+  content: "";
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: inherit;
+  height: 0.25rem;
+  background: inherit;
+  -webkit-backdrop-filter: inherit;
+          backdrop-filter: inherit;
+  border: inherit;
+  border-radius: inherit;
+}
+.container-main__slider .inactive::after {
+  content: "";
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: inherit;
+  height: 0.25rem;
+  -webkit-backdrop-filter: blur(16px);
+          backdrop-filter: blur(16px);
+  border: inherit;
+  border-radius: inherit;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+  /* Дополнительные эффекты для "размытого" вида */
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.1);
+  filter: blur(0.5px);
 }/*# sourceMappingURL=style.css.map */

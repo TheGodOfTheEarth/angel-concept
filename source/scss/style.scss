@@ -5,6 +5,7 @@
    margin: 0;
    border: none;
    box-sizing: border-box;
+   scrollbar-width: none;
 }
 
 :root {
@@ -17,10 +18,13 @@ html {
    width: 100%;
    height: auto;
    min-height: 100vh;
-   overflow: hidden;
+   overflow-x: hidden;
 }
 
 .container {
+   width: 90rem;
+   height: 51.25rem;
+   overflow-x: hidden;
 }
 
 .container-header {
@@ -389,5 +393,145 @@ html {
             margin: auto;
          }
       }
+   }
+}
+
+.container-main__slider-wrapper {
+   width: 100vw;
+   margin-left: -2.5rem;
+}
+
+.container-main__slider {
+   margin: 5.8rem auto 0 auto;
+   display: flex;
+   gap: 0.25rem;
+   flex-wrap: nowrap;
+
+   width: 62.625rem;
+   height: 8.625rem;
+
+   .slider-item {
+      position: relative;
+
+      display: flex;
+      flex-wrap: nowrap;
+
+      padding: 0.25rem;
+
+      border-radius: 1.25rem;
+   }
+
+   .slider-item__text {
+      width: 7.75rem;
+      height: 8.125rem;
+
+      .number {
+         margin: 0.75rem;
+         width: 2rem;
+         height: 2rem;
+
+         background-color: inherit;
+         color: inherit;
+
+         font-family: Golos Text;
+         font-weight: 500;
+         font-style: Medium;
+         font-size: 0.95rem;
+         line-height: 100%;
+         letter-spacing: 0%;
+         text-transform: uppercase;
+
+         border-radius: 50%;
+
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+
+      .text {
+         margin: 0.75rem;
+
+         font-family: KyivType Sans;
+         font-weight: 400;
+         font-style: Regular;
+         font-size: 0.85rem;
+         line-height: 124%;
+         letter-spacing: -1%;
+      }
+   }
+
+   .active {
+      width: 16.25rem;
+      height: 8.625rem;
+
+      background-color: #fff;
+      color: black;
+
+      .img {
+         width: 7.75rem;
+         height: 8.125rem;
+
+         border-radius: 1rem;
+      }
+   }
+
+   .active > .slider-item__text > .number {
+      border: 1px solid rgba(213, 175, 98, 0.6);
+   }
+
+   .inactive {
+      width: 9rem;
+      height: 8.625rem;
+
+      background-color: rgba(0, 0, 0, 0);
+      color: white;
+
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+
+      .img {
+         display: none;
+      }
+   }
+
+   .inactive > .slider-item__text > .number {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background-color: rgba(255, 255, 255, 0.2);
+   }
+
+   .active::after {
+      content: '';
+      position: absolute;
+      top: 110%;
+      left: 0;
+      width: inherit;
+      height: 0.25rem;
+      background: inherit;
+      backdrop-filter: inherit;
+      border: inherit;
+      border-radius: inherit;
+   }
+   .inactive::after {
+      content: '';
+      position: absolute;
+      top: 110%;
+      left: 0;
+      width: inherit;
+      height: 0.25rem;
+      backdrop-filter: blur(16px);
+      border: inherit;
+      border-radius: inherit;
+
+      background: linear-gradient(
+         90deg,
+         rgba(255, 255, 255, 0.3),
+         rgba(255, 255, 255, 0.1),
+         rgba(255, 255, 255, 0.3)
+      );
+
+      /* Дополнительные эффекты для "размытого" вида */
+      box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2),
+         0 0 20px rgba(255, 255, 255, 0.1);
+      filter: blur(0.5px);
    }
 }
