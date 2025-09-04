@@ -86,7 +86,7 @@ html {
    position: absolute;
    top: 0;
    left: 0;
-   width: 100%;
+   min-width: 100%;
    height: auto;
    z-index: -1;
    object-fit: contain;
@@ -574,5 +574,11 @@ html {
 
    100% {
       transform: translateX(0);
+   }
+}
+
+@media (min-width > 1440px) {
+   .video-wrapper__bg-video {
+      object-fit: cover;
    }
 }
