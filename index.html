@@ -121,7 +121,7 @@
             </div>
             <div class="container-main__slider-wrapper">
                <div class="container-main__slider">
-                  <div class="slider-item active">
+                  <div class="slider-item inactive" id="first">
                      <div class="slider-item__text">
                         <div class="number">1</div>
                         <div class="text">
@@ -130,28 +130,28 @@
                      </div>
                      <img src="./images/img.png" alt="photo" class="img" />
                   </div>
-                  <div class="slider-item inactive">
+                  <div class="slider-item inactive" id="second">
                      <div class="slider-item__text">
                         <div class="number">2</div>
                         <div class="text">Коррекция фигуры и силуэта</div>
                      </div>
                      <img src="./images/img.png" alt="photo" class="img" />
                   </div>
-                  <div class="slider-item inactive">
+                  <div class="slider-item active" id="third">
                      <div class="slider-item__text">
                         <div class="number">3</div>
                         <div class="text">SPA и европейские массажи</div>
                      </div>
                      <img src="./images/img.png" alt="photo" class="img" />
                   </div>
-                  <div class="slider-item inactive">
+                  <div class="slider-item inactive" id="fourth">
                      <div class="slider-item__text">
                         <div class="number">4</div>
                         <div class="text">Велнес-программы и флоатация</div>
                      </div>
                      <img src="./images/img.png" alt="photo" class="img" />
                   </div>
-                  <div class="slider-item inactive">
+                  <div class="slider-item inactive" id="fifth">
                      <div class="slider-item__text">
                         <div class="number">5</div>
                         <div class="text">
@@ -160,7 +160,7 @@
                      </div>
                      <img src="./images/img.png" alt="photo" class="img" />
                   </div>
-                  <div class="slider-item inactive">
+                  <div class="slider-item inactive" id="sixth">
                      <div class="slider-item__text">
                         <div class="number">6</div>
                         <div class="text">Тайские и балийские массажи</div>
@@ -172,4 +172,46 @@
          </main>
       </div>
    </body>
+
+   <script>
+      const first = document.getElementById('first')
+      const second = document.getElementById('second')
+      const third = document.getElementById('third')
+      const fourth = document.getElementById('fourth')
+      const fifth = document.getElementById('fifth')
+      const sixth = document.getElementById('sixth')
+
+      const items = document.getElementsByClassName('slider-item')
+
+      const arr = [first, second, third, fourth, fifth, sixth]
+
+      const refresh = () => {
+         arr.forEach((el) => {
+            el.classList.remove('active')
+            el.classList.add('inactive')
+         })
+      }
+
+      window.addEventListener('click', (e) => {
+         const parent = e.target.closest('.slider-item')
+
+         if (parent) {
+            console.log(e.target)
+
+            // parent.style.transition = 'ease 3s'
+
+            refresh()
+            parent.classList.remove('inactive')
+            parent.classList.add('active')
+         }
+
+         // if (e.target.matches('.slider-item__text')) {
+         //    const parentBlock = e.target.closest('.slider-item')
+
+         //    if (parentBlock) {
+         //       parentBlock.classList.toggle('active')
+         //    }
+         // }
+      })
+   </script>
 </html>

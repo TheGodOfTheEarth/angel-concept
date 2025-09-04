@@ -1,3 +1,8 @@
+@font-face {
+   font-family: KyivType Sans;
+   src: url('../../fonts/KyivTypeSans.woff2');
+}
+
 *,
 *::after,
 *::before {
@@ -151,13 +156,15 @@ html {
          color: white;
          display: flex;
          flex-direction: column;
+         font-family: 'KyivType Sans';
 
          .left-content-btn__text-top {
-            font-weight: 500;
+            font-weight: 600;
             font-style: Medium;
             font-size: 0.85rem;
             line-height: 124%;
             letter-spacing: -1%;
+            color: white;
          }
 
          .left-content-btn__dot {
@@ -184,9 +191,9 @@ html {
       }
    }
    .left-content__text {
-      // font-family: KyivType Sans;
+      font-family: 'KyivType Sans';
       color: var(--light-color);
-      font-weight: 400;
+      font-weight: 500;
       font-size: 0.75 rem;
       line-height: 124%;
       letter-spacing: -1%;
@@ -307,17 +314,18 @@ html {
    display: flex;
    align-items: center;
    justify-content: space-between;
-   gap: 2rem;
+   gap: 1rem;
 
    .nav-item {
       color: white;
-      font-family: KyivType Sans;
-      font-weight: 500;
+      font-family: 'KyivType Sans';
+      font-weight: 600;
       font-style: Medium;
       font-size: 0.8rem;
       line-height: 124%;
       letter-spacing: 6%;
       text-transform: uppercase;
+      white-space: nowrap;
    }
 
    .nav-item:first-child {
@@ -358,7 +366,9 @@ html {
       border-radius: 20rem;
       border: 1px solid #a87c25;
       background: linear-gradient(180deg, #d4b26f -66.86%, #a87c25 180.08%);
-      padding: 1rem 1.5rem;
+      padding: 1rem 1rem;
+
+      font-weight: 900;
 
       display: flex;
       align-items: center;
@@ -419,6 +429,8 @@ html {
       padding: 0.25rem;
 
       border-radius: 1.25rem;
+
+      transition: all 1s;
    }
 
    .slider-item__text {
@@ -449,12 +461,12 @@ html {
       }
 
       .text {
-         margin: 0.75rem;
+         margin: 0.7rem;
 
          font-family: KyivType Sans;
-         font-weight: 400;
+         font-weight: 600;
          font-style: Regular;
-         font-size: 0.85rem;
+         font-size: 0.8rem;
          line-height: 124%;
          letter-spacing: -1%;
       }
@@ -472,6 +484,9 @@ html {
          height: 8.125rem;
 
          border-radius: 1rem;
+
+         animation-name: anim;
+         animation-duration: 1s;
       }
    }
 
@@ -533,5 +548,31 @@ html {
       box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2),
          0 0 20px rgba(255, 255, 255, 0.1);
       filter: blur(0.5px);
+   }
+}
+
+@keyframes anim {
+   0% {
+      transform: translateX(-2rem);
+   }
+
+   25% {
+      transform: translateX(-1.5rem);
+   }
+
+   42% {
+      transform: translateX(-1rem);
+   }
+
+   50% {
+      transform: translateX(-0.7rem);
+   }
+
+   75% {
+      transform: translateX(-0.2rem);
+   }
+
+   100% {
+      transform: translateX(0);
    }
 }
